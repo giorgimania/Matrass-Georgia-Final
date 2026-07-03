@@ -155,12 +155,19 @@ export function ProductRight({
     <PageShell side="right" className="items-center justify-center bg-white p-8">
       <div className="relative flex h-full w-full items-center justify-center">
         <div className="pointer-events-none absolute inset-6 rounded-2xl bg-purple-light/40 blur-xl" />
-        <div className="relative flex h-[85%] w-[85%] flex-col items-center justify-center rounded-2xl bg-soft-grey px-6 text-center">
-          <span className={cn("font-serif text-xl text-text-dark", lang === "ge" ? "font-georgian" : "font-serif")}>
+        <div className="relative flex h-[88%] w-[88%] flex-col overflow-hidden rounded-2xl bg-off-white shadow-[0_10px_30px_rgba(26,26,26,0.08)]">
+          <img
+            src={product.image || "/placeholder.svg"}
+            alt={lang === "ge" ? product.nameGe : product.nameEn}
+            className="h-full w-full object-cover"
+          />
+          <span
+            className={cn(
+              "absolute inset-x-0 bottom-0 bg-gradient-to-t from-text-dark/70 to-transparent px-4 pb-3 pt-8 text-center text-sm font-semibold text-white",
+              lang === "ge" ? "font-georgian" : "font-serif",
+            )}
+          >
             {lang === "ge" ? product.nameGe : product.nameEn}
-          </span>
-          <span className="mt-2 font-serif text-sm italic text-text-mid/70">
-            {tr("catalog.photoSoon")}
           </span>
         </div>
         <span className="absolute bottom-0 right-0 font-serif text-xs text-text-mid/60">{pageNum}</span>

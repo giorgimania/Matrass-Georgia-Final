@@ -32,15 +32,17 @@ export function FeaturedProducts() {
           {featured.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.1} className="shrink-0 snap-start">
               <div className="group flex w-72 flex-col overflow-hidden rounded-2xl border border-soft-grey bg-white shadow-[0_6px_24px_rgba(26,26,26,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(187,0,255,0.14)]">
-                <div className="relative flex h-40 items-center justify-center bg-soft-grey">
+                <div className="relative flex h-48 items-center justify-center overflow-hidden bg-off-white">
                   {p.onSale && (
-                    <span className="absolute left-3 top-3 rounded-full bg-purple px-3 py-1 text-xs font-semibold text-white">
+                    <span className="absolute left-3 top-3 z-10 rounded-full bg-purple px-3 py-1 text-xs font-semibold text-white">
                       {tr("catalog.sale")}
                     </span>
                   )}
-                  <span className="px-4 text-center font-serif text-lg text-text-mid">
-                    {lang === "ge" ? p.nameGe : p.nameEn}
-                  </span>
+                  <img
+                    src={p.image || "/placeholder.svg"}
+                    alt={lang === "ge" ? p.nameGe : p.nameEn}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className={cn("text-lg font-semibold text-text-dark", lang === "ge" ? "font-georgian" : "font-serif")}>

@@ -6,6 +6,7 @@ export interface Product {
   nameEn: string
   category: Category
   categoryGe: string
+  image: string
   priceRange: string
   descEn: string
   descGe: string
@@ -28,7 +29,7 @@ const cat = (c: Category): string => {
 
 const s = (arr: [number, number][]) => arr.map(([size, price]) => ({ size, price }))
 
-export const products: Product[] = [
+const rawProducts: Omit<Product, "image">[] = [
   {
     slug: "bio-eco",
     nameGe: "ბიო ეკო",
@@ -245,6 +246,30 @@ export const products: Product[] = [
     contactForPrice: true,
   },
 ]
+
+const imageMap: Record<string, string> = {
+  "bio-eco": "/products/bio-mattress.png",
+  "bio-memory-orthopedic": "/products/memory-foam.png",
+  "gran-softi": "/products/soft-mattress.png",
+  "eco-tobra": "/products/classic-mattress.png",
+  elegance: "/products/premium-mattress.png",
+  comfort: "/products/soft-mattress.png",
+  "mattress-topper": "/products/topper.png",
+  "memory-therapy-anatomic": "/products/memory-foam.png",
+  "orthopedic-pillow": "/products/pillow.png",
+  planeta: "/products/classic-mattress.png",
+  prestige: "/products/premium-mattress.png",
+  smarti: "/products/classic-mattress.png",
+  softmore: "/products/soft-mattress.png",
+  "ultra-bag": "/products/rolled-mattress.png",
+  focus: "/products/classic-mattress.png",
+  "bio-eco-premium": "/products/bio-mattress.png",
+}
+
+export const products: Product[] = rawProducts.map((p) => ({
+  ...p,
+  image: imageMap[p.slug] ?? "/products/classic-mattress.png",
+}))
 
 export const WHATSAPP_URL = "https://wa.me/995555591306"
 export const PHONE = "+995 555 59 13 06"
