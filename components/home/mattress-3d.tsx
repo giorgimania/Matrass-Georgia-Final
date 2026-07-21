@@ -23,8 +23,11 @@ function BedModel({ interacting }: { interacting: boolean }) {
     box.getSize(sizeVec)
     box.getCenter(center)
 
-    // recenter geometry at origin
-    scene.position.set(-center.x, -center.y, -center.z)
+    // Recenter geometry at the origin. The model includes tall nightstand
+    // lamps that pull the bounding-box center upward, so bias the vertical
+    // recenter downward a little to visually frame the bed body itself.
+    const verticalBias = sizeVec.y * 0.12
+    scene.position.set(-center.x, -center.y + verticalBias, -center.z)
 
     // scale so the model's largest dimension fills ~80% of the visible viewport
     // height (using the max extent keeps a wide bed fully in frame)
