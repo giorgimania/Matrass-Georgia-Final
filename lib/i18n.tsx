@@ -13,6 +13,16 @@ export const t: Dict = {
   "nav.about": { ge: "ჩვენ შესახებ", en: "About" },
   "nav.contact": { ge: "კონტაქტი", en: "Contact" },
 
+  "nav.mattresses": { ge: "მატრასები", en: "Mattresses" },
+  "nav.beds": { ge: "საწოლები", en: "Beds" },
+  "nav.pillows": { ge: "ბალიშები", en: "Pillows" },
+
+  "soon.title": { ge: "მალე", en: "Coming Soon" },
+  "soon.subtitle": {
+    ge: "კოლექცია მალე დაემატება.",
+    en: "This collection is on its way.",
+  },
+
   "hero.headline": { ge: "იდეალური ძილის ხელოვნება", en: "The Art of Perfect Sleep" },
   "hero.subtitle": { ge: "პრემიუმ ხარისხი", en: "Premium Quality" },
   "hero.body": {
