@@ -17,7 +17,7 @@ export function FeaturedProducts() {
     .filter(Boolean) as typeof products
 
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-off-white py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <h2 className={cn("text-center text-3xl font-bold text-text-dark sm:text-4xl", geFont)}>

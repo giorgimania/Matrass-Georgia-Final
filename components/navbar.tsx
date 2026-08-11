@@ -22,6 +22,12 @@ export function Navbar() {
   const geFont = lang === "ge" ? "font-georgian" : "font-sans"
 
   return (
+    <>
+    <div
+      aria-hidden="true"
+      className="pointer-events-none fixed left-0 top-16 z-40 w-full"
+      style={{ height: 120, background: "linear-gradient(to bottom, rgba(187,0,255,0.15) 0%, rgba(187,0,255,0.05) 50%, transparent 100%)" }}
+    />
     <header className="sticky top-0 z-50 w-full border-b border-soft-grey bg-white/90 backdrop-blur-md shadow-[0_1px_12px_rgba(26,26,26,0.04)]">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         {/* Logo */}
@@ -116,5 +122,6 @@ export function Navbar() {
         </ul>
       )}
     </header>
+    </>
   )
 }

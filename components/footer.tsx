@@ -23,7 +23,7 @@ export function Footer() {
           <Logo className="h-10 w-10" />
           <div>
             <p className="font-serif text-lg font-semibold">Matrass Georgia</p>
-            <p className="font-serif text-sm text-salmon">{tr("footer.premium")}</p>
+            <p className="font-serif text-sm text-purple">{tr("footer.premium")}</p>
           </div>
         </div>
 

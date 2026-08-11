@@ -38,7 +38,7 @@ export function Stats() {
   const label = lang === "ge" ? "font-georgian" : "font-sans"
 
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-[#F3E0FF] py-16 sm:py-20">
       <div className="mx-auto grid max-w-4xl grid-cols-1 gap-10 px-6 text-center sm:grid-cols-3">
         <div>
           <p className="font-serif text-5xl font-bold text-purple sm:text-6xl">

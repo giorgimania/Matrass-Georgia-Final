@@ -18,7 +18,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-off-white">
-      <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-6xl items-center gap-8 px-6 py-16 lg:grid-cols-2 lg:gap-4 lg:py-0">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-6 py-16 lg:grid-cols-2 lg:gap-4 lg:py-20">
         {/* Left text */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
